@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thiệp cưới | Linh ❤️ Nam</title>
+
+<style>
+    body {
+        font-family: "Times New Roman", serif;
+        margin: 0;
+        background: #faf7f3;
+        color: #333;
+        text-align: center;
+    }
+
+    .hero {
+        padding: 70px 20px;
+        background-image: url('https://i.imgur.com/zlte5Qr.jpg');
+        background-size: cover;
+        background-position: center;
+        color: white;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+        font-style: italic;
+        margin: 0;
+    }
+
+    .hero p {
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    .section {
+        padding: 40px 25px;
+        line-height: 1.6;
+    }
+
+    .divider {
+        width: 60%;
+        height: 2px;
+        background: #c6b59d;
+        margin: 25px auto;
+    }
+
+    .info-box {
+        background: #fff;
+        width: 90%;
+        margin: 0 auto;
+        padding: 25px;
+        border-radius: 18px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    button {
+        background: #b88e64;
+        padding: 12px 28px;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    .countdown {
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 15px;
+        color: #b88e64;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+    <h3 style="margin:0;letter-spacing:2px;font-weight:300;">Lễ thành hôn</h3>
+    <h1>Linh & Nam</h1>
+    <p>❤️ Trân trọng kính mời ❤️</p>
+</div>
+
+<section class="section">
+    <h2>Thiệp mời</h2>
+    <p>Chúng tôi rất hân hạnh được mời bạn đến tham dự buổi tiệc cưới.</p>
+
+    <div class="countdown" id="time"></div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+    <div class="info-box">
+        <h2>📅 Thời gian</h2>
+        <p><b>Ngày:</b> 10/12/2025</p>
+        <p><b>Đón khách:</b> 17:30</p>
+        <p><b>Khai tiệc:</b> 18:30</p>
+
+        <br/>
+
+        <h2>📍 Địa điểm</h2>
+        <p>Riverside Palace</p>
+        <p>360D Bến Vân Đồn – Q.4 – TP.HCM</p>
+
+        <button onclick="window.open('https://maps.google.com','_blank')">Xem bản đồ</button>
+    </div>
+</section>
+
+<section class="section" style="padding-bottom:60px;">
+    <p style="font-style:italic; font-size:18px; color:#b88e64;">
+        Sự hiện diện của bạn là niềm vinh hạnh cho gia đình chúng tôi.
+    </p>
+</section>
+
+<script>
+const eventDay = new Date("Dec 10, 2025 18:30:00").getTime();
+setInterval(() => {
+    let now = new Date().getTime();
+    let diff = eventDay - now;
+
+    if(diff <= 0){
+        document.getElementById("time").innerHTML = "💍 Hôm nay là ngày trọng đại rồi!";
+        return;
+    }
+
+    let d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    let h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+    document.getElementById("time").innerHTML = `${d} ngày ${h} giờ nữa 💖`;
+}, 1000);
+</script>
+
+</body>
+</html>
